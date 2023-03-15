@@ -1,35 +1,34 @@
-#include "sprite.h"
+#include "joueur.h"
 
 /* ==================================================================================================================================  */
 /* ============================================================  Getters ============================================================  */
 /* ==================================================================================================================================  */
 
-float getSpriteX(sprite* Sprite){Sprite->x;}
-float getSpriteY(sprite* Sprite){Sprite->y;}
-int getSpriteHeight(sprite* Sprite){Sprite->height;}
-int getSpriteWidth(sprite* Sprite){Sprite->width;}
-SDL_Texture* getSpriteTexture(sprite* Sprite){Sprite->texture;}
+float getJoueurX(joueur* Joueur){Joueur->Sprite.x;}
+float getJoueurY(joueur* Joueur){Joueur->Sprite.y;}
+int getJoueurHeight(joueur* Joueur){Joueur->Sprite.height;}
+int getJoueurWidth(joueur* Joueur){Joueur->Sprite.width;}
+SDL_Texture* getJoueurTexture(joueur* Joueur){Joueur->Sprite.texture;}
 
 /* ==================================================================================================================================  */
 /* ============================================================  Setters ============================================================  */
 /* ==================================================================================================================================  */
 
-void setSpriteX(sprite* Sprite, float x){Sprite->x = x;}
-void setSpriteY(sprite* Sprite, float y){Sprite->y = y;}
-void setSpriteHeight(sprite* Sprite, int height){Sprite->height = height;}
-void setSpriteWidth(sprite* Sprite, int width){Sprite->width = width;}
-void setSpriteTexture(sprite* Sprite, SDL_Texture* texture){Sprite->texture = texture;}
+void setJoueurX(joueur* Joueur, float x){Joueur->Sprite.x = x;}
+void setJoueurY(joueur* Joueur, float y){Joueur->Sprite.y = y;}
+void setJoueurHeight(joueur* Joueur, int height){Joueur->Sprite.height = height;}
+void setJoueurWidth(joueur* Joueur, int width){Joueur->Sprite.width = width;}
+void setJoueurTexture(joueur* Joueur, SDL_Texture* texture){Joueur->Sprite.texture = texture;}
 
 /* ==================================================================================================================================  */
 /* ===========================================================  Fonctions ===========================================================  */
 /* ==================================================================================================================================  */
 
-sprite initSprite(float x, float y, int height, int width, SDL_Texture* texture){
-    sprite Sprite;
-    setSpriteX(&Sprite, x);
-    setSpriteY(&Sprite, y);
-    setSpriteHeight(&Sprite, height);
-    setSpriteWidth(&Sprite, width);
-    setSpriteTexture(&Sprite, texture);
-    return Sprite;
+joueur initJoueur(float x, float y, int height, int width){
+    joueur Joueur;
+    setJoueurX(&Joueur, x);
+    setJoueurY(&Joueur, y);
+    setJoueurHeight(&Joueur, height);
+    setJoueurWidth(&Joueur, width);
+    return Joueur;
 }

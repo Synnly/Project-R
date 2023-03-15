@@ -98,8 +98,9 @@ void setSpriteTexture(sprite* Sprite, SDL_Texture* texture);
  * @param y Sa coordonnée Y
  * @param height Sa hauteur
  * @param width Sa largeur
+ * @param texture Sa texture
  * @return Le sprite initialisé
  */
-sprite initSprite(float x, float y, int height, int width);
+sprite initSprite(float x, float y, int height, int width, SDL_Texture* texture);
 
 #endif //PROJECT_R_SPRITE_H
