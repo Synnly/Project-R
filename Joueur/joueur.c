@@ -4,11 +4,11 @@
 /* ============================================================  Getters ============================================================  */
 /* ==================================================================================================================================  */
 
-float getJoueurX(joueur* Joueur){Joueur->Sprite.x;}
-float getJoueurY(joueur* Joueur){Joueur->Sprite.y;}
-int getJoueurHeight(joueur* Joueur){Joueur->Sprite.height;}
-int getJoueurWidth(joueur* Joueur){Joueur->Sprite.width;}
-SDL_Texture* getJoueurTexture(joueur* Joueur){Joueur->Sprite.texture;}
+float getJoueurX(joueur* Joueur){return Joueur->Sprite.x;}
+float getJoueurY(joueur* Joueur){return Joueur->Sprite.y;}
+int getJoueurHeight(joueur* Joueur){return Joueur->Sprite.height;}
+int getJoueurWidth(joueur* Joueur){return Joueur->Sprite.width;}
+SDL_Texture* getJoueurTexture(joueur* Joueur){return Joueur->Sprite.texture;}
 
 /* ==================================================================================================================================  */
 /* ============================================================  Setters ============================================================  */

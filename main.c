@@ -1,4 +1,6 @@
 #include "SDL2/SDL.h"
+#include "Monde/monde.h"
+#include "Systemes/eventhandler.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -7,6 +9,8 @@ int main(){
 
     SDL_Window* fenetre;
     SDL_Renderer* renderer;
+
+    monde Monde;
 
     // Initialisation du module vidéo
     SDL_SetMainReady();
@@ -23,12 +27,11 @@ int main(){
 
     SDL_SetRenderDrawColor(renderer, 32, 34, 37, SDL_ALPHA_OPAQUE);
 
-    bool enJeu = true;
     SDL_Event event;
-    while(enJeu){
-        if(SDL_PollEvent(&event) && ((&event)->type == SDL_QUIT)){
-            enJeu = false;
-        }
+    while(isGamePlaying(&Monde)){
+        SDL_RenderClear(renderer);
+        handleEvents(&Monde, &event);
+        SDL_RenderPresent(renderer);
     }
 
     // Nettoyage du code

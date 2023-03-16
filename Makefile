@@ -4,10 +4,11 @@ CFLAGS = -Wall -W -std=c99 -g
 LIBS =
 LDFLAGS = `sdl2-config --cflags --libs`
 EXEC = main
-SRC = main.c
+SRC = main.c Systemes/eventhandler.c Sprite/sprite.c Monde/monde.c Joueur/joueur.c
 OBJ = $(SRC:.c=.o)
 
 all: $(EXEC)
+	clean
 
 main: $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS) $(LDFLAGS)

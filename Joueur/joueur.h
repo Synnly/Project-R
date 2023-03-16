@@ -3,6 +3,9 @@
 
 #include "../Sprite/sprite.h"
 
+/**
+ * Structure de données du joueur
+ */
 struct joueur_t{
     sprite Sprite;
     int speed;
