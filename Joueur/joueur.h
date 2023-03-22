@@ -8,7 +8,7 @@
  */
 struct joueur_t{
     sprite Sprite;
-    int speed;
+    float speed;
 };
 
 typedef struct joueur_t joueur;
@@ -41,6 +41,12 @@ int getJoueurHeight(joueur* Joueur);
  * @return Sa largeur
  */
 int getJoueurWidth(joueur* Joueur);
+
+/**
+ * @param Joueur Le joueur
+ * @return Sa vitesse
+ */
+float getJoueurSpeed(joueur* Joueur);
 
 /**
  * @param Joueur Le joueur
@@ -81,6 +87,13 @@ void setJoueurHeight(joueur* Joueur, int height);
 void setJoueurWidth(joueur* Joueur, int width);
 
 /**
+ * Modifie la vitesse du joueur
+ * @param Joueur Le sprite
+ * @param x La vitesse
+ */
+void setJoueurSpeed(joueur* Joueur, float vitesse);
+
+/**
  * Modifie la texture du joueur
  * @param Joueur Le sprite
  * @param x La texture
@@ -100,5 +113,18 @@ void setJoueurTexture(joueur* Joueur, SDL_Texture* texture);
  * @return Le joueur initialisé
  */
 joueur initJoueur(float x, float y, int height, int width);
+
+/**
+ * Affiche les infos du joueur
+ * @param Joueur Le joueur
+ */
+void joueurToString(joueur* Joueur);
+
+/**
+ * Deplace le joueur en fonction de la direction entrée
+ * @param Joueur Le joueur
+ * @param direction gauche, droite, haut ou bas
+ */
+void movePlayer(joueur* Joueur, const char* direction);
 
 #endif //PROJECT_R_JOUEUR_H

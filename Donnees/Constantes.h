@@ -1,0 +1,7 @@
+#ifndef PROJECT_R_CONSTANTES_H
+#define PROJECT_R_CONSTANTES_H
+
+#define SCR_W 1280
+#define SCR_H 720
+
+#endif //PROJECT_R_CONSTANTES_H

@@ -1,6 +1,7 @@
 #include "SDL2/SDL.h"
 #include "Monde/monde.h"
 #include "Systemes/eventhandler.h"
+#include "Donnees/Constantes.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -12,6 +13,9 @@ int main(){
 
     monde Monde;
 
+    joueur Joueur = initJoueur(SCR_W/2, SCR_H/2, 40, 40);
+    setJoueur(&Monde, &Joueur);
+
     // Initialisation du module vidéo
     SDL_SetMainReady();
     if (SDL_Init(SDL_INIT_VIDEO)){
@@ -20,7 +24,7 @@ int main(){
     }
 
     // Création de la fenêtre et du renderer
-    if (SDL_CreateWindowAndRenderer(1000, 800, SDL_WINDOW_SHOWN | SDL_WINDOW_INPUT_FOCUS, &fenetre, &renderer)){
+    if (SDL_CreateWindowAndRenderer(SCR_W, SCR_H, SDL_WINDOW_SHOWN | SDL_WINDOW_INPUT_FOCUS, &fenetre, &renderer)){
         printf(" Error : %s", SDL_GetError());
         exit(EXIT_FAILURE);
     }
@@ -28,9 +32,12 @@ int main(){
     SDL_SetRenderDrawColor(renderer, 32, 34, 37, SDL_ALPHA_OPAQUE);
 
     SDL_Event event;
+
+    // Boucle de jeu
     while(isGamePlaying(&Monde)){
         SDL_RenderClear(renderer);
         handleEvents(&Monde, &event);
+        joueurToString(&Joueur);
         SDL_RenderPresent(renderer);
     }
 
