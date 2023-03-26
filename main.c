@@ -2,6 +2,7 @@
 #include "Monde/monde.h"
 #include "Systemes/eventhandler.h"
 #include "Donnees/Constantes.h"
+#include "Graphismes/graphismes.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -31,20 +32,20 @@ int main(){
 
     SDL_SetRenderDrawColor(renderer, 32, 34, 37, SDL_ALPHA_OPAQUE);
 
+    initJoueurSprite(renderer, &Joueur);
+
     SDL_Event event;
 
     // Boucle de jeu
     while(isGamePlaying(&Monde)){
         SDL_RenderClear(renderer);
         handleEvents(&Monde, &event);
-        joueurToString(&Joueur);
+        drawJoueur(renderer, &Joueur);
         SDL_RenderPresent(renderer);
     }
 
     // Nettoyage du code
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(fenetre);
-    SDL_Quit();
+    endSDL(fenetre, renderer);
 
     return 0;
 }

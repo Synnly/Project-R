@@ -16,10 +16,10 @@ void handleEvents(monde* Monde, SDL_Event* events){
     }
     else{
         // Déplacement à gauche
-        if (keystates[SDL_SCANCODE_LEFT] || keystates[SDL_SCANCODE_A]) { movePlayer(getJoueur(Monde), "gauche"); }
+        if (keystates[SDL_SCANCODE_LEFT] || keystates[SDL_SCANCODE_A]) {movePlayer(getJoueur(Monde), "gauche");}
 
         // Déplacement à droite
-        else if (keystates[SDL_SCANCODE_RIGHT] || keystates[SDL_SCANCODE_D]) { movePlayer(getJoueur(Monde), "droite"); }
+        else if (keystates[SDL_SCANCODE_RIGHT] || keystates[SDL_SCANCODE_D]) {movePlayer(getJoueur(Monde), "droite");}
 
         // Déplacement en haut
         else if (keystates[SDL_SCANCODE_UP] || keystates[SDL_SCANCODE_W]) {movePlayer(getJoueur(Monde), "haut");}

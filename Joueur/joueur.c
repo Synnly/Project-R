@@ -1,4 +1,5 @@
 #include "joueur.h"
+#include "../Donnees/Constantes.h"
 #include <string.h>
 
 /* ==================================================================================================================================  */
@@ -33,7 +34,7 @@ joueur initJoueur(float x, float y, int height, int width){
     setJoueurY(&Joueur, y);
     setJoueurHeight(&Joueur, height);
     setJoueurWidth(&Joueur, width);
-    setJoueurSpeed(&Joueur, 4.);
+    setJoueurSpeed(&Joueur, PLYR_SPD);
     return Joueur;
 }
 
