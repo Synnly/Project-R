@@ -33,7 +33,7 @@ void drawSprite(SDL_Renderer* renderer, int x, int y, int w, int h, int spriteIn
 }
 
 void drawJoueur(SDL_Renderer* renderer, joueur* Joueur){
-    drawSprite(renderer, getJoueurX(Joueur), getJoueurY(Joueur), getJoueurWidth(Joueur), getJoueurHeight(Joueur), 0,getJoueurTexture(Joueur));
+    drawSprite(renderer, (int) getJoueurX(Joueur), (int) getJoueurY(Joueur), getJoueurWidth(Joueur), getJoueurHeight(Joueur), 0,getJoueurTexture(Joueur));
 }
 
 void endSDL(SDL_Window* fenetre, SDL_Renderer* renderer){

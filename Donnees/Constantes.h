@@ -6,6 +6,6 @@
 #define SCR_H 720
 
 // Joueur
-#define PLYR_SPD 0.1
+#define PLYR_SPD 0.4
 
 #endif //PROJECT_R_CONSTANTES_H

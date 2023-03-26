@@ -15,8 +15,21 @@ void handleEvents(monde* Monde, SDL_Event* events){
         finishGame(Monde);
     }
     else{
+
+        // Déplacement en haut-gauche
+        if ((keystates[SDL_SCANCODE_LEFT] || keystates[SDL_SCANCODE_A]) && (keystates[SDL_SCANCODE_UP] || keystates[SDL_SCANCODE_W])) {movePlayer(getJoueur(Monde), "haut-gauche");}
+
+        // Déplacement en bas-gauche
+        else if ((keystates[SDL_SCANCODE_LEFT] || keystates[SDL_SCANCODE_A]) && (keystates[SDL_SCANCODE_DOWN] || keystates[SDL_SCANCODE_S])) {movePlayer(getJoueur(Monde), "bas-gauche");}
+
+        // Déplacement en haut-droite
+        else if ((keystates[SDL_SCANCODE_RIGHT] || keystates[SDL_SCANCODE_D]) && (keystates[SDL_SCANCODE_UP] || keystates[SDL_SCANCODE_W])) {movePlayer(getJoueur(Monde), "haut-droite");}
+
+        // Déplacement en bas-droite
+        else if ((keystates[SDL_SCANCODE_RIGHT] || keystates[SDL_SCANCODE_D]) && (keystates[SDL_SCANCODE_DOWN] || keystates[SDL_SCANCODE_S])) {movePlayer(getJoueur(Monde), "bas-droite");}
+
         // Déplacement à gauche
-        if (keystates[SDL_SCANCODE_LEFT] || keystates[SDL_SCANCODE_A]) {movePlayer(getJoueur(Monde), "gauche");}
+        else if (keystates[SDL_SCANCODE_LEFT] || keystates[SDL_SCANCODE_A]) {movePlayer(getJoueur(Monde), "gauche");}
 
         // Déplacement à droite
         else if (keystates[SDL_SCANCODE_RIGHT] || keystates[SDL_SCANCODE_D]) {movePlayer(getJoueur(Monde), "droite");}

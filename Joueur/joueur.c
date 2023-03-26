@@ -1,5 +1,6 @@
 #include "joueur.h"
 #include "../Donnees/Constantes.h"
+#include "../Donnees/donnees.h"
 #include <string.h>
 
 /* ==================================================================================================================================  */
@@ -39,7 +40,7 @@ joueur initJoueur(float x, float y, int height, int width){
 }
 
 void joueurToString(joueur* Joueur){
-    printf("x %.3f, y %.3f, w %d, h %d\n", getJoueurX(Joueur), getJoueurY(Joueur), getJoueurWidth(Joueur), getJoueurHeight(Joueur));
+    printf("x %.3f, y %.3f, w %d, h %d, s%f\n", getJoueurX(Joueur), getJoueurY(Joueur), getJoueurWidth(Joueur), getJoueurHeight(Joueur),getJoueurSpeed(Joueur));
 }
 
 void movePlayer(joueur* Joueur, const char* direction){
@@ -54,5 +55,21 @@ void movePlayer(joueur* Joueur, const char* direction){
     }
     else if(strcmp("bas", direction) == 0){
         setJoueurY(Joueur, (getJoueurY(Joueur) + getJoueurSpeed(Joueur)));
+    }
+    else if(strcmp("haut-gauche", direction) == 0){
+        setJoueurX(Joueur, (getJoueurX(Joueur)-pyth(getJoueurSpeed(Joueur))));
+        setJoueurY(Joueur, (getJoueurY(Joueur)-pyth(getJoueurSpeed(Joueur))));
+    }
+    else if(strcmp("bas-gauche", direction) == 0){
+        setJoueurX(Joueur, (getJoueurX(Joueur)-pyth(getJoueurSpeed(Joueur))));
+        setJoueurY(Joueur, (getJoueurY(Joueur)+pyth(getJoueurSpeed(Joueur))));
+    }
+    else if(strcmp("haut-droite", direction) == 0){
+        setJoueurX(Joueur, (getJoueurX(Joueur)+pyth(getJoueurSpeed(Joueur))));
+        setJoueurY(Joueur, (getJoueurY(Joueur)-pyth(getJoueurSpeed(Joueur))));
+    }
+    else if(strcmp("bas-droite", direction) == 0){
+        setJoueurX(Joueur, (getJoueurX(Joueur)+pyth(getJoueurSpeed(Joueur))));
+        setJoueurY(Joueur, (getJoueurY(Joueur)+pyth(getJoueurSpeed(Joueur))));
     }
 }
